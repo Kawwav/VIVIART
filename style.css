@@ -6,106 +6,99 @@
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  line-height: 1.4;
-  background: #cfbbcf;
+  background: #ffecfb;
   color: #111;
 }
 
-
+/* HEADER */
 header {
-  background: #cfbbcf;
-  border-bottom: 0.1px solid #ce9da3;
-  padding: 12px 20px;
+  background: #ffecfb;
+  border-bottom: 0.1px solid #cfb1b5;
+  padding: 20px 40px;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
+/* Topo do header */
+.header-top {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between; /* separa logo e menu */
+  gap: 60px;
 }
 
-/*logo*/
-.brand {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: #a04650;
-}
-/*logo*/
-
-
-/*header*/
-nav {
-  margin-left: auto; 
-  
+/* Logo */
+.brand img.emblema {
+  width: 180px;
+  height: auto;
 }
 
+/* Navegação */
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 18px;
-  align-items: center;
+  gap: 24px;
+  justify-content: flex-end;
   
 }
 
 .nav-list a {
   text-decoration: none;
   color: #a04650;
+  font-weight: 500;
+  font-size: 26px;
   padding: 8px 10px;
   border-radius: 6px;
-  transition: background-color 120ms, color 120ms, transform 120ms;
-  font-weight: 500;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.nav-list a:hover,
-.nav-list a:focus {
-  background: transparent;
+.nav-list a:hover {
+  transform: translateY(-2px);
+  color: #6c2e35;
+}
+
+/* Imagem e texto abaixo do logo */
+.container1 {
+  margin-top: 15px;
+  margin-left: -30px;
+}
+
+.img-ver2 {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Título abaixo da imagem */
+.container1 h1 {
+  margin-top: -46px;
+  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.5;
   color: #a04650;
-  transform: translateY(-1px);
-  outline: none;
+  font-weight: 500;
+  margin-left: 30px;
 }
-@media (max-width: 600px) {
-  .container {
-    flex-wrap: wrap;
-    justify-content: space-between;
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
   }
 
-  nav {
-    width: 100%;
+  .container1 {
     margin-left: 0;
-    margin-top: 8px;
+    text-align: center;
   }
 
-  .nav-list {
-    justify-content: flex-end;
-    gap: 12px;
-    flex-wrap: wrap;
+  .img-ver2 {
+    max-width: 280px;
   }
-}
-/*header*/
 
-.container1{
-}
-
-.title{
-    padding: 10px;
-    font-size: 30px;
-    color: #a04650;
-    
-
-}
-
-
-
-
-
-main {
-  padding: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-section {
-  margin-bottom: 40px;
+  .container1 h1 {
+    font-size: 1rem;
+    margin-top: 12px;
+    padding: 0 20px;
+  }
 }
