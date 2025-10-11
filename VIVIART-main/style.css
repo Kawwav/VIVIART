@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(to bottom, #fbeeee 0%, #fffaf8 100%);
+  color: #111;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(to bottom, #f9e1e7 0%, #fbeeee 60%, transparent 100%);
+  padding: 20px 40px;
+}
+/* Alinhamento da logo e texto */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Texto ao lado da logo */
+.brand-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #623b2a;
+  margin: 0;
+}
+
+.brand-text p {
+  font-size: 0.95rem;
+  color: #a04650;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+
+
+
+
+/* Topo do header */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa logo e menu */
+  gap: 60px;
+}
+
+/* Logo */
+.brand img.emblema {
+  width: 90px;
+  height: auto;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #623b2a;
+  margin-bottom: 16px;
+}
+
+.hero-text p {
+  color: #7c5a51;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+}
+
+
+.hero-image img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/*botões header*/
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  background: #a04650;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #6c2e35;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #a04650;
+  border: 2px solid #a04650;
+}
+
+.btn-outline:hover {
+  background: #a04650;
+  color: #fff;
+}
+
+
+
+/* Navegação */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  justify-content: flex-end;
+  
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #a04650;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-list a:hover {
+  transform: translateY(-2px);
+  color: #6c2e35;
+}
+
+/* Imagem e texto abaixo do logo */
+.container1 {
+  margin-top: 15px;
+  margin-left: -30px;
+}
+
+.img-ver2 {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Título abaixo da imagem */
+.container1 h1 {
+  margin-top: -46px;
+  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #a04650;
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .container1 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .img-ver2 {
+    max-width: 280px;
+  }
+
+  .container1 h1 {
+    font-size: 1rem;
+    margin-top: 12px;
+    padding: 0 20px;
+  }
+}
+
+
