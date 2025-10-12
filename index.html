@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <!--adicionar barra de pesquisa-->
+      <!-- adicionar barra de pesquisa -->
       <nav aria-label="Navegação principal" class="nav-area">
         <div class="search-container">
           <input type="text" id="search-input" placeholder="Pesquisar...">
@@ -51,17 +51,17 @@
 
         <div class="carousel-track">
           <div class="carousel-item">
-            <img src="./img/bolsa1.PNG" alt="Bolsa artesanal 1" />
+            <img src="./img/bolsa1.PNG" alt="bolsa1" />
             <h1 class="descrição">Bolsa artesanal</h1>
           </div>
 
           <div class="carousel-item">
-            <img src="./img/bolsa2.PNG" alt="Bolsa artesanal 2" />
+            <img src="./img/bolsa2.PNG" alt="bolsa2" />
             <h1 class="descrição">Bolsa artesanal</h1>
           </div>
 
           <div class="carousel-item">
-            <img src="./img/bolsa3.PNG" alt="Bolsa artesanal 3" />
+            <img src="./img/bolsa3.PNG" alt="bolsa3" />
             <h1 class="descrição">Bolsa artesanal</h1>
           </div>
         </div>
@@ -96,7 +96,7 @@
       </div>
     </section>
 
-    <!--PARTE DAS COLEÇÕES DE BOLSAS-->
+    <!-- PARTE DAS COLEÇÕES DE BOLSAS -->
     <section class="coleção" id="colecao">
       <h1 class="coleção-titulo">Coleção</h1>
 
@@ -118,36 +118,27 @@
       </div>
     </section>
 
-
-
     <!-- MODAL DE VISUALIZAÇÃO DE IMAGENS -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
 
-   <!-- MODAL DE VISUALIZAÇÃO DE IMAGENS -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="fechar" onclick="fecharModal()">&times;</span>
+        <div class="modal-left">
+          <img class="modal-img" id="imgAmpliada" alt="Imagem ampliada">
+        </div>
 
-    <div class="modal-left">
-      <img class="modal-img" id="imgAmpliada" alt="Imagem ampliada">
+        <div class="modal-right">
+          <h2 id="modalTitulo">Bolsa artesanal</h2>
+          <p id="modalDescricao">
+            Bolsa feita à mão com fio de algodão de alta qualidade, perfeita para o dia a dia.
+          </p>
+          <h3 id="modalPreco">R$250,00</h3>
+        </div>
+      </div>
     </div>
-
-    <div class="modal-right">
-      <h2 id="modalTitulo">Bolsa artesanal</h2>
-      <p id="modalDescricao">
-        Bolsa feita à mão com fio de algodão de alta qualidade, perfeita para o dia a dia.
-      </p>
-      <h3 id="modalPreco">R$250,00</h3>
-    </div>
-  </div>
-</div>
-
-
   </main>
 
+  <!-- Importa o JavaScript -->
   <script src="script.js"></script>
 </body>
-
-
-
-
 </html>
