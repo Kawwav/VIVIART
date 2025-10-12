@@ -12,7 +12,13 @@ body {
 
 /* HEADER */
 header {
-  background: linear-gradient(to bottom, #ffe2ea 0%, #ffe1e1 60%, transparent 100%);
+  background: linear-gradient(
+    to bottom,
+    #ffe2ea 0%,     /* topo */
+    #ffe1e1 60%,    /* meio */
+    #fff5f8 90%,    /* transição */
+    #fff8fe 100%    /*body */
+  );
   padding: 20px 40px;
 }
 /* Alinhamento da logo e texto */
@@ -244,6 +250,7 @@ font-size: 20px;
   display: flex;
   gap: 24px;
   justify-content: flex-end;
+
   
 }
 
