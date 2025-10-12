@@ -319,7 +319,7 @@ font-size: 20px;
 
 .sobre-titulo {
   font-family: "Playfair Display", serif;
-  font-size: 3rem;
+  font-size: 50px;
   color: #623b2a;
   margin-bottom: 60px;
   text-align: center;
@@ -377,11 +377,83 @@ font-size: 20px;
 }
 
 .sobre-texto p {
-  font-size: 1.2rem;
+  font-size: 20px;
   color: #7c5a51;
   line-height: 1.8;
   margin-bottom: 20px;
 }
+
+
+
+/*coleção*/
+
+.coleção {
+  background-color: #fff5f8;
+  color: #7c5a51;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  padding: 80px 40px;
+}
+
+
+.coleção-titulo{
+  font-size: 50px;  
+  color:#623b2a ;
+  margin-bottom: 60px;
+}
+
+.coleção-container{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 90px;     /*espaçamento entre as bolsa*/
+  
+
+}
+
+.item {
+  
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 176, 176, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+}
+.item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+.descrição {
+  font-size: 1.3rem;
+  color: #a04650;
+  margin-bottom: 8px;
+}
+
+.item h2 {
+  font-size: 1.1rem;
+  color: #623b2a;
+}
+
+.coleção-img {
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsividade */
 @media (max-width: 900px) {
@@ -399,9 +471,6 @@ font-size: 20px;
   }
 }
 
-
-
-/* Responsivo */
 @media (max-width: 700px) {
   .header-top {
     flex-direction: column;
