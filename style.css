@@ -6,16 +6,37 @@
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: #ffecfb;
+  background: linear-gradient(to bottom, transparent 10%, #fff8fe 100%);
   color: #111;
 }
 
 /* HEADER */
 header {
-  background: #ffecfb;
-  border-bottom: 0.1px solid #cfb1b5;
+  background: linear-gradient(to bottom, #ffe2ea 0%, #ffe1e1 60%, transparent 100%);
   padding: 20px 40px;
 }
+/* Alinhamento da logo e texto */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Texto ao lado da logo */
+.brand-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #623b2a;
+  margin: 0;
+}
+
+.brand-text p {
+  font-size: 0.95rem;
+  color: #a04650;
+  margin-top: 4px;
+  font-style: italic;
+}
+
 
 /* Topo do header */
 .header-top {
@@ -27,9 +48,195 @@ header {
 
 /* Logo */
 .brand img.emblema {
-  width: 180px;
+  width: 100px;
   height: auto;
 }
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #623b2a;
+  margin-bottom: 16px;
+}
+
+.hero-text p {
+  color: #7c5a51;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+}
+
+
+.hero-image img {
+  justify-content: center;
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+ 
+}
+
+/*img carrossel*/
+.hero-carousel {
+  position: relative;
+  max-width: 460px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Botões laterais */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(160, 70, 80, 0.8);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: #6c2e35;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/*barra de pesquisa*/
+
+.search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#search-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #a04650;
+  border-radius: 8px;
+  background-color: #ffe2ea;
+  color: #623b2a;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: #6c2e35;
+  box-shadow: 0 0 10px rgba(160, 70, 80, 0.3);
+}
+
+
+
+
+/*descrição das img da bolsas no header*/
+
+.descrição{
+font-family: "Playfair Display", serif;
+color:#a04650;
+padding: 8px 10px;
+font-size: 25px;
+
+}
+
+
+.descrição1{
+font-family: "Playfair Display", serif;
+color:#a04650;
+padding: 8px 10px;
+font-size: 20px;
+
+}
+
+
+/*botões header*/
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  background: #a04650;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #6c2e35;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #a04650;
+  border: 2px solid #a04650;
+}
+
+.btn-outline:hover {
+  background: #a04650;
+  color: #fff;
+}
+
+
 
 /* Navegação */
 .nav-list {
@@ -40,11 +247,19 @@ header {
   
 }
 
+.nav-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 30px;
+}
+
 .nav-list a {
   text-decoration: none;
   color: #a04650;
   font-weight: 500;
-  font-size: 26px;
+  font-size: 20px;
   padding: 8px 10px;
   border-radius: 6px;
   transition: transform 0.2s ease, color 0.2s ease;
@@ -79,6 +294,106 @@ header {
   margin-left: 30px;
 }
 
+
+
+/*  SOBRE  */
+
+.sobre {
+  background-color: #fff5f8;
+  padding: 100px 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.sobre-titulo {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #623b2a;
+  margin-bottom: 60px;
+  text-align: center;
+  animation: subir 1s ease-out forwards;
+}
+
+
+.sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: subir 1.2s ease-out 0.3s forwards;
+}
+
+/* Animação de entrada */
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Imagem à esquerda */
+.sobre-img {
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: flutuar 3s ease-in-out infinite alternate;
+}
+
+/* Animação sutil da imagem */
+@keyframes flutuar {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* Texto à direita da imagem */
+.sobre-texto {
+  max-width: 600px;
+  text-align: left;
+}
+
+.sobre-texto p {
+  font-size: 1.2rem;
+  color: #7c5a51;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto {
+    text-align: center;
+  }
+
+  .sobre-img {
+    width: 80%;
+  }
+}
+
+
+
 /* Responsivo */
 @media (max-width: 700px) {
   .header-top {
@@ -102,3 +417,5 @@ header {
     padding: 0 20px;
   }
 }
+
+
