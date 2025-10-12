@@ -445,7 +445,105 @@ font-size: 20px;
 }
 
 
+/*click para abrir imagens "modal"*/
 
+
+.modal {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px); /* fundo borrado */
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* conteúdo principal do modal */
+.modal-content {
+  display: flex;
+  background-color: white;
+  border-radius: 15px;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+  animation: scaleIn 0.4s ease;
+}
+
+/* imagem da bolsa */
+.modal-left {
+  flex: 1;
+  background-color: #fff5f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* caixa branca com a descrição */
+.modal-right {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #7c5a51;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal-right h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 10px;
+}
+
+.modal-right p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.modal-right h3 {
+  color: #b37b6b;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+
+/* botão fechar */
+.fechar {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #7c5a51;
+  font-size: 2em;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.fechar:hover {
+  transform: scale(1.1);
+}
+
+/* animações suaves */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes scaleIn {
+  from {transform: scale(0.95);}
+  to {transform: scale(1);}
+}
 
 
 
@@ -456,21 +554,6 @@ font-size: 20px;
 
 
 /* Responsividade */
-@media (max-width: 900px) {
-  .sobre-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-texto {
-    text-align: center;
-  }
-
-  .sobre-img {
-    width: 80%;
-  }
-}
-
 @media (max-width: 700px) {
   .header-top {
     flex-direction: column;
@@ -492,6 +575,22 @@ font-size: 20px;
     margin-top: 12px;
     padding: 0 20px;
   }
+
+  
+  .coleção-container {
+    display: flex;
+    flex-wrap: nowrap;       
+    overflow-x: auto;         
+    justify-content: flex-start;
+    gap: 30px;                
+    padding-bottom: 20px;     
+  }
+
+  .coleção-img {
+    width: 750px;             
+    flex-shrink: 0;           
+  }
 }
+
 
 

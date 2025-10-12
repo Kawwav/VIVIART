@@ -20,12 +20,9 @@
           <h1>Viviart Crochê</h1>
           <p>Feito à mão com amor 🧵</p>
         </div>
-
       </div>
 
-
       <!--adicionar barra de pesquisa-->
-
       <nav aria-label="Navegação principal" class="nav-area">
         <div class="search-container">
           <input type="text" id="search-input" placeholder="Pesquisar...">
@@ -36,7 +33,6 @@
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-
     </div>
 
     <section class="hero">
@@ -49,11 +45,11 @@
         <a href="#colecao" class="btn">Ver coleção</a>
       </div>
 
+      <!-- Carrossel de imagens -->
       <div class="hero-carousel">
         <button class="carousel-btn prev">❮</button>
 
         <div class="carousel-track">
-
           <div class="carousel-item">
             <img src="./img/bolsa1.PNG" alt="Bolsa artesanal 1" />
             <h1 class="descrição">Bolsa artesanal</h1>
@@ -68,20 +64,15 @@
             <img src="./img/bolsa3.PNG" alt="Bolsa artesanal 3" />
             <h1 class="descrição">Bolsa artesanal</h1>
           </div>
-
-
         </div>
 
         <button class="carousel-btn next">❯</button>
       </div>
-
     </section>
   </header>
 
-
-
-
   <main>
+    <!-- SEÇÃO SOBRE A VIVIART -->
     <section class="sobre">
       <h1 class="sobre-titulo">Sobre a Viviart</h1>
 
@@ -105,53 +96,58 @@
       </div>
     </section>
 
-    
+    <!--PARTE DAS COLEÇÕES DE BOLSAS-->
+    <section class="coleção" id="colecao">
+      <h1 class="coleção-titulo">Coleção</h1>
 
-      <!--PARTE DAS COLEÇÕES DE BOLSAS-->
+      <div class="coleção-container">
+        <div class="item">
+          <img src="./img/bolsa1.PNG" alt="bolsa1" class="coleção-img" onclick="abrirModal(this)">
+          <h1 class="descrição">Bolsa e porta celular</h1>
+        </div>
 
-      <section class="coleção">
-        <h1 class="coleção-titulo">Coleção</h1>
+        <div class="item">
+          <img src="./img/bolsa2.PNG" alt="bolsa2" class="coleção-img" onclick="abrirModal(this)">
+          <h1 class="descrição">Bolsa artesanal azul</h1>
+        </div>
 
-        <div class="coleção-container">
-
-          <div class="item">
-            <img src="./img/bolsa1.PNG" alt="bolsa1" class="coleção-img">
-            <h1 class="descrição">Bolsa artesanal</h1>
-            
-          </div>
-
-          <div class="item">
-            <img src="./img/bolsa2.PNG" alt="bolsa2" class="coleção-img">
-            <h1 class="descrição">Bolsa artesanal</h1>
-            
-          </div>
-
-          <div class="item">
-            <img src="./img/bolsa3.PNG" alt="bolsa3" class="coleção-img">
-            <h1 class="descrição">Bolsa artesanal</h1>
-            
-          </div>
-
-        
-        
+        <div class="item">
+          <img src="./img/bolsa3.PNG" alt="bolsa3" class="coleção-img" onclick="abrirModal(this)">
+          <h1 class="descrição">Bolsa artesanal marrom</h1>
+        </div>
+      </div>
+    </section>
 
 
 
+    <!-- MODAL DE VISUALIZAÇÃO DE IMAGENS -->
 
+   <!-- MODAL DE VISUALIZAÇÃO DE IMAGENS -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="fechar" onclick="fecharModal()">&times;</span>
 
+    <div class="modal-left">
+      <img class="modal-img" id="imgAmpliada" alt="Imagem ampliada">
+    </div>
 
-
-
-
-
-      </section>
-
-
+    <div class="modal-right">
+      <h2 id="modalTitulo">Bolsa artesanal</h2>
+      <p id="modalDescricao">
+        Bolsa feita à mão com fio de algodão de alta qualidade, perfeita para o dia a dia.
+      </p>
+      <h3 id="modalPreco">R$250,00</h3>
+    </div>
+  </div>
+</div>
 
 
   </main>
 
+  <script src="script.js"></script>
+</body>
 
 
-  </section>
-  </main>
+
+
+</html>
