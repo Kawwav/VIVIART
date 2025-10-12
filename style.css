@@ -554,6 +554,23 @@ font-size: 20px;
 
 
 /* Responsividade */
+/* 🔹 Responsividade geral */
+@media (max-width: 900px) {
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto {
+    text-align: center;
+  }
+
+  .sobre-img {
+    width: 80%;
+  }
+}
+
+/* 🔹 Ajustes para telas pequenas (mobile) */
 @media (max-width: 700px) {
   .header-top {
     flex-direction: column;
@@ -576,21 +593,65 @@ font-size: 20px;
     padding: 0 20px;
   }
 
-  
+  /* 👇 Deixa as imagens da coleção lado a lado */
   .coleção-container {
     display: flex;
-    flex-wrap: nowrap;       
-    overflow-x: auto;         
+    flex-wrap: nowrap;       /* impede quebra de linha */
+    overflow-x: auto;         /* rolagem horizontal */
     justify-content: flex-start;
-    gap: 30px;                
-    padding-bottom: 20px;     
+    gap: 30px;
+    padding-bottom: 20px;
+    scrollbar-width: thin;    /* estiliza scrollbar em navegadores modernos */
+    scrollbar-color: #a04650 #fff5f8;
+  }
+
+  .coleção-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .coleção-container::-webkit-scrollbar-thumb {
+    background: #a04650;
+    border-radius: 10px;
+  }
+
+  .coleção-container::-webkit-scrollbar-track {
+    background: #fff5f8;
   }
 
   .coleção-img {
-    width: 750px;             
-    flex-shrink: 0;           
+    width: 250px;
+    flex-shrink: 0; /* impede deformação */
+  }
+
+  /* 🔹 Modal no mobile: empilhar imagem e texto */
+  .modal-content {
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+  }
+
+  .modal-left {
+    padding: 15px;
+  }
+
+  .modal-img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .modal-right {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .fechar {
+    top: 10px;
+    right: 15px;
   }
 }
+
+
 
 
 
