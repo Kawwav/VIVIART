@@ -1,12 +1,16 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VIVIART</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <header>
     <div class="header-top">
@@ -15,34 +19,63 @@
         <div class="brand-text">
           <h1>Viviart Crochê</h1>
           <p>Feito à mão com amor 🧵</p>
-        </div>  
+        </div>
 
       </div>
 
-      <nav aria-label="Navegação principal">
+
+      <!--adicionar barra de pesquisa-->
+
+      <nav aria-label="Navegação principal" class="nav-area">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Pesquisar...">
+        </div>
+
         <ul class="nav-list">
           <li><a href="#colecao">Coleção</a></li>
           <li><a href="#eventos">Eventos</a></li>
-          <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
+
     </div>
 
-     <section class="hero">
+    <section class="hero">
       <div class="hero-text">
         <h2>Bolsas artesanais feitas à mão</h2>
-        <p>Peças únicas inspiradas na natureza e no estilo boho. 
-        Encomendas abertas — envio para todo o Brasil.</p>
+        <p>Peças únicas inspiradas na natureza e no estilo boho.
+          Encomendas abertas — envio para todo o Brasil.</p>
 
         <div class="hero-buttons"></div>
-          <a href="#colecao" class="btn">Ver coleção</a>
-          <a href="#contato" class="btn btn-outline">Sobre</a>
+        <a href="#colecao" class="btn">Ver coleção</a>
       </div>
 
-      <div class="hero-image">
-        <img src="./img/bolsa1.png" alt="Bolsa artesanal" />
+      <div class="hero-carousel">
+        <button class="carousel-btn prev">❮</button>
+
+        <div class="carousel-track">
+
+          <div class="carousel-item">
+            <img src="./img/bolsa1.PNG" alt="Bolsa artesanal 1" />
+            <h1 class="descrição">Bolsa artesanal</h1>
+          </div>
+
+          <div class="carousel-item">
+            <img src="./img/bolsa2.PNG" alt="Bolsa artesanal 2" />
+            <h1 class="descrição">Bolsa artesanal</h1>
+          </div>
+
+          <div class="carousel-item">
+            <img src="./img/bolsa3.PNG" alt="Bolsa artesanal 3" />
+            <h1 class="descrição">Bolsa artesanal</h1>
+          </div>
+
+
+        </div>
+
+        <button class="carousel-btn next">❯</button>
       </div>
+
     </section>
   </header>
 
@@ -50,7 +83,31 @@
 
 
   <main>
-    
+    <section class="sobre">
+      <h1 class="sobre-titulo">Sobre a Viviart</h1>
+
+      <div class="sobre-container">
+        <img src="./img/VIVIARTCROCHE.png" alt="Logo Viviart" class="sobre-img">
+
+        <div class="sobre-texto">
+          <p>
+            A <strong>Viviart Crochê</strong> nasceu do amor pelo artesanal e pela delicadeza dos detalhes.
+            Cada peça é criada à mão, com dedicação, paciência e muito carinho.
+            O crochê, que começou como um hobby, transformou-se em um projeto de vida,
+            levando arte e afeto para cada cliente.
+          </p>
+
+          <p>
+            A missão da Viviart é inspirar o apreço pelo feito à mão,
+            valorizando o tempo, o cuidado e a autenticidade de cada criação.
+            Mais do que acessórios, cada peça carrega uma história tecida com amor.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
-</body>
-</html>
+
+
+
+  </section>
+  </main>
