@@ -1,36 +1,43 @@
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+  margin: 0;               /* Remove margens padrão */
+  padding: 0;              /* Remove padding padrão */
 }
 
+/* -----------------------------------------
+   ESTILO BASE DO BODY
+----------------------------------------- */
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(to bottom, transparent 10%, #fff8fe 100%);
-  color: #111;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; /* Fonte principal */
+  background: linear-gradient(to bottom, transparent 10%, #fff8fe 100%); /* Fundo degradê suave */
+  color: #111; /* Cor de texto padrão */
 }
 
-/* HEADER */
+/* -----------------------------------------
+   HEADER
+----------------------------------------- */
 header {
   background: linear-gradient(
     to bottom,
-    #ffe2ea 0%,     /* topo */
-    #ffe1e1 60%,    /* meio */
-    #fff5f8 90%,    /* transição */
-    #fff8fe 100%    /*body */
+    /* Começa com um rosa um pouco mais saturado */
+    #fcd5e5 0%,
+    #ffe1e1 50%, 
+    #fff5f8 90%, 
+    #fff8fe 100%
   );
   padding: 20px 40px;
 }
-/* Alinhamento da logo e texto */
+
+/* LOGO E TEXTO */
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  display: flex;           /* Layout flexível */
+  align-items: center;     /* Alinhamento vertical */
+  gap: 14px;               /* Espaçamento entre logo e texto */
 }
 
-/* Texto ao lado da logo */
 .brand-text h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif; /* Fonte serifada para título */
   font-size: 1.6rem;
   color: #623b2a;
   margin: 0;
@@ -43,21 +50,23 @@ header {
   font-style: italic;
 }
 
-
-/* Topo do header */
+/* TOPO DO HEADER */
 .header-top {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* separa logo e menu */
+  justify-content: space-between; /* Separar logo e menu */
   gap: 60px;
 }
 
-/* Logo */
+/* IMAGEM DA LOGO */
 .brand img.emblema {
   width: 100px;
   height: auto;
 }
 
+/* -----------------------------------------
+   HERO SECTION
+----------------------------------------- */
 .hero {
   display: flex;
   align-items: center;
@@ -85,48 +94,16 @@ header {
   font-size: 1.05rem;
 }
 
-
 .hero-image img {
   justify-content: center;
   max-width: 250px;
   width: 100%;
   height: auto;
- 
 }
 
-/* ---- Fade-in dos cards ---- */
-.card {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.card.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ---- Destaque ao rolar para coleção ---- */
-#colecao.highlight {
-  animation: destaque 1s ease;
-}
-
-@keyframes destaque {
-  0% {
-    transform: scale(0.98);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.02);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-
-/*img carrossel*/
+/* -----------------------------------------
+   CARROSSEL DO HERO
+----------------------------------------- */
 .hero-carousel {
   position: relative;
   max-width: 660px;
@@ -141,15 +118,15 @@ header {
 }
 
 .carousel-item {
-  flex: 0 0 33.33%; 
+  flex: 0 0 33.33%; /* Largura fixa do item */
   text-align: center;
   transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 0.5;
+  opacity: 0.5;     /* Item inativo meio transparente */
   transform: scale(0.8);
 }
 
 .carousel-item.active {
-  opacity: 1;
+  opacity: 1;       /* Item ativo totalmente visível */
   transform: scale(1);
   z-index: 2;
 }
@@ -160,7 +137,7 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Botões laterais */
+/* BOTÕES DO CARROSSEL */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -181,8 +158,9 @@ header {
   right: 10px;
 }
 
-/*barra de pesquisa*/
-
+/* -----------------------------------------
+   BARRA DE PESQUISA
+----------------------------------------- */
 .search-container {
   position: relative;
   display: inline-block;
@@ -225,7 +203,6 @@ header {
   background-color: #ffe2ea;
 }
 
-
 .clear-history-btn {
   display: block;
   margin: 5px auto 0;
@@ -243,37 +220,74 @@ header {
   background-color: #6c2e35;
 }
 
-
-
-
-
-/*descrição das img da bolsas no header*/
-
-.descrição{
-font-family: "Playfair Display", serif;
-color:#a04650;
-padding: 8px 10px;
-font-size: 25px;
-
+/* INPUT DE PESQUISA */
+.search-container input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #d4a5a5;
+  outline: none;
+  font-size: 1rem;
+  width: 220px;
+  transition: 0.3s;
 }
 
-
-.descrição1{
-font-family: "Playfair Display", serif;
-color:#a04650;
-padding: 8px 10px;
-font-size: 20px;
-
+.search-container input:focus {
+  border-color: #7c5a51;
+  box-shadow: 0 0 5px rgba(124, 90, 81, 0.5);
 }
 
-
-/*botões header*/
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  margin-top: 20px;
+/* -----------------------------------------
+   FADE-IN E DESTAQUES
+----------------------------------------- */
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
 
+.card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#colecao.highlight {
+  animation: destaque 1s ease;
+}
+
+@keyframes destaque {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* -----------------------------------------
+   DESCRIÇÃO DAS IMAGENS
+----------------------------------------- */
+.descrição {
+  font-family: "Playfair Display", serif;
+  color: #a04650;
+  padding: 8px 10px;
+  font-size: 25px;
+}
+
+.descrição1 {
+  font-family: "Playfair Display", serif;
+  color: #a04650;
+  padding: 8px 10px;
+  font-size: 20px;
+}
+
+/* -----------------------------------------
+   BOTÕES
+----------------------------------------- */
 .btn {
   text-decoration: none;
   background: #a04650;
@@ -300,16 +314,14 @@ font-size: 20px;
   color: #fff;
 }
 
-
-
-/* Navegação */
+/* -----------------------------------------
+   NAVEGAÇÃO
+----------------------------------------- */
 .nav-list {
   list-style: none;
   display: flex;
   gap: 24px;
   justify-content: flex-end;
-
-  
 }
 
 .nav-area {
@@ -335,34 +347,9 @@ font-size: 20px;
   color: #6c2e35;
 }
 
-/* Imagem e texto abaixo do logo */
-.container1 {
-  margin-top: 15px;
-  margin-left: -30px;
-}
-
-.img-ver2 {
-  max-width: 350px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Título abaixo da imagem */
-.container1 h1 {
-  margin-top: -46px;
-  max-width: 700px;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: #a04650;
-  font-weight: 500;
-  margin-left: 30px;
-}
-
-
-
-/*  SOBRE  */
-
+/* -----------------------------------------
+   SEÇÃO SOBRE
+----------------------------------------- */
 .sobre {
   background-color: #fff5f8;
   padding: 100px 40px;
@@ -384,7 +371,6 @@ font-size: 20px;
   animation: subir 1s ease-out forwards;
 }
 
-
 .sobre-container {
   display: flex;
   align-items: center;
@@ -396,19 +382,11 @@ font-size: 20px;
   animation: subir 1.2s ease-out 0.3s forwards;
 }
 
-/* Animação de entrada */
 @keyframes subir {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Imagem à esquerda */
 .sobre-img {
   width: 420px;
   max-width: 100%;
@@ -418,17 +396,11 @@ font-size: 20px;
   animation: flutuar 3s ease-in-out infinite alternate;
 }
 
-/* Animação sutil da imagem */
 @keyframes flutuar {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-10px);
-  }
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
 }
 
-/* Texto à direita da imagem */
 .sobre-texto {
   max-width: 600px;
   text-align: left;
@@ -441,90 +413,43 @@ font-size: 20px;
   margin-bottom: 20px;
 }
 
-
-
-/*coleção*/
-
+/* -----------------------------------------
+   COLEÇÃO
+----------------------------------------- */
 .coleção {
   background-color: #fff5f8;
   color: #7c5a51;
   font-family: "Playfair Display", serif;
   text-align: center;
   padding: 80px 40px;
+  margin-bottom: 350px;
 }
 
-
-.coleção-titulo{
+.coleção-titulo {
   font-size: 50px;  
-  color:#623b2a ;
+  color: #623b2a;
   margin-bottom: 60px;
 }
 
-.coleção-container{
+.coleção-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 90px;     /*espaçamento entre as bolsa*/
-  
-
+  gap: 90px; /* Espaçamento entre itens */
 }
-/*carrosel dentro do modal*/
-.modal-left {
-  position: relative;
-  width: 60%;
-}
-
-.carousel {
-  position: relative;
-}
-
-.modal-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-}
-
-/* Setas */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  padding: 10px;
-  margin-top: -20px;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  user-select: none;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
 
 .item {
-  
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(255, 176, 176, 0.1);
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 300px;
 }
+
 .item:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-.descrição {
-  font-size: 1.3rem;
-  color: #a04650;
-  margin-bottom: 8px;
-}
-
-.item h2 {
-  font-size: 1.1rem;
-  color: #623b2a;
 }
 
 .coleção-img {
@@ -533,13 +458,22 @@ font-size: 20px;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
 }
 
+.item h2 {
+  font-size: 1.1rem;
+  color: #623b2a;
+}
 
-/*click para abrir imagens "modal"*/
+.descrição {
+  font-size: 1.3rem;
+  color: #a04650;
+  margin-bottom: 8px;
+}
 
-
+/* -----------------------------------------
+   MODAIS
+----------------------------------------- */
 .modal {
   display: none; 
   position: fixed;
@@ -547,7 +481,7 @@ font-size: 20px;
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(8px); /* fundo borrado */
+  backdrop-filter: blur(8px); /* Fundo borrado */
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   justify-content: center;
@@ -555,7 +489,6 @@ font-size: 20px;
   animation: fadeIn 0.3s ease;
 }
 
-/* conteúdo principal do modal */
 .modal-content {
   display: flex;
   background-color: white;
@@ -567,7 +500,6 @@ font-size: 20px;
   animation: scaleIn 0.4s ease;
 }
 
-/* imagem da bolsa */
 .modal-left {
   flex: 1;
   background-color: #fff5f8;
@@ -584,7 +516,6 @@ font-size: 20px;
   object-fit: cover;
 }
 
-/* caixa branca com a descrição */
 .modal-right {
   flex: 1;
   padding: 30px;
@@ -611,7 +542,6 @@ font-size: 20px;
   font-size: 1.3em;
 }
 
-/* botão fechar */
 .fechar {
   position: absolute;
   top: 15px;
@@ -626,222 +556,171 @@ font-size: 20px;
   transform: scale(1.1);
 }
 
-/* animações suaves */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes scaleIn { from {transform: scale(0.95);} to {transform: scale(1);} }
 
-@keyframes scaleIn {
-  from {transform: scale(0.95);}
-  to {transform: scale(1);}
-}
-
-
-
-
-
-
-
-
-
-/* Responsividade */
-@media (max-width: 900px) {
-  .sobre-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-texto {
-    text-align: center;
-  }
-
-  .sobre-img {
-    width: 80%;
-  }
-}
-
-/* 🔹 Ajustes para telas pequenas (mobile) */
-@media (max-width: 700px) {
-  .header-top {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .container1 {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .img-ver2 {
-    max-width: 280px;
-  }
-
-  .container1 h1 {
-    font-size: 1rem;
-    margin-top: 12px;
-    padding: 0 20px;
-  }
-
-  /*  Deixa as imagens da coleção lado a lado */
-  .coleção-container {
-    display: flex;
-    flex-wrap: nowrap;       /* impede quebra de linha */
-    overflow-x: auto;         /* rolagem horizontal */
-    justify-content: flex-start;
-    gap: 30px;
-    padding-bottom: 20px;
-    scrollbar-width: thin;    /* estiliza scrollbar em navegadores modernos */
-    scrollbar-color: #a04650 #fff5f8;
-  }
-
-  .coleção-container::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .coleção-container::-webkit-scrollbar-thumb {
-    background: #a04650;
-    border-radius: 10px;
-  }
-
-  .coleção-container::-webkit-scrollbar-track {
-    background: #fff5f8;
-  }
-
-  .coleção-img {
-    width: 250px;
-    flex-shrink: 0; /* impede deformação */
-  }
-
-  /* Modal no mobile: empilhar imagem e texto */
-  .modal-content {
-    flex-direction: column;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 12px;
-  }
-
-  .modal-left {
-    padding: 15px;
-  }
-
-  .modal-img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
-  .modal-right {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .fechar {
-    top: 10px;
-    right: 15px;
-  }
-}
-
-
-
-
-
-
-.search-container input {
-  padding: 8px 12px;
-  border-radius: 20px;
-  border: 1px solid #d4a5a5;
-  outline: none;
-  font-size: 1rem;
-  width: 220px;
-  transition: 0.3s;
-}
-
-.search-container input:focus {
-  border-color: #7c5a51;
-  box-shadow: 0 0 5px rgba(124, 90, 81, 0.5);
-}
-
-/*Linha do tempo*/
-
-
+/* -----------------------------------------
+    LINHA DO TEMPO
+----------------------------------------- */
 .timeline-container {
+  /* Garante o espaço de contenção para os filhos absolutos */
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 0;
+  background-color: #fcf4f6;
+  padding: 80px 40px; 
+  min-height: 400px; /* Aumenta a altura para garantir espaço suficiente */
+  display: flex;
+  justify-content: space-between; /* Distribui os eventos horizontalmente */
+  align-items: center; /* Alinha os eventos verticalmente (útil para a bolinha) */
 }
 
+/* A linha central horizontal */
 .timeline-container::before {
   content: '';
   position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background: #a04650;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  height: 4px;
+  background: #a04650; /* Cor da linha */
+  z-index: 1;
 }
 
-/* Evento base */
 .timeline-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  width: 50%;
-  margin: 40px 0;
+  min-width: 180px;
   cursor: pointer;
+  z-index: 3;
+  /* Define a posição da bolinha no centro vertical do container */
+  align-self: center; 
 }
 
-/* Bolinha */
+/* Bolinha de evento (o círculo na linha) */
 .timeline-dot {
-  width: 20px;
-  height: 20px;
-  background-color: #a04650;
-  border-radius: 50%;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); 
-  z-index: 10;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: #a04650;
+  border: 4px solid #fcf4f6; /* Cor de fundo da seção */
+  border-radius: 50%;
+  z-index: 5;
+  transition: transform 0.3s ease;
 }
 
-/* Labels */
+.timeline-event:hover .timeline-dot {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Caixa do evento (o retângulo) */
 .timeline-label {
   background: #fff5f8;
-  padding: 15px 20px;
+  border: 2px solid #a04650;
+  padding: 12px 16px;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Evento à esquerda */
-.timeline-event.left .timeline-dot {
-  right: -9px; /* distância da linha/texto */
-}
-
-.timeline-event.left .timeline-label {
-  margin-right: 80px; /* distância da linha */
-}
-
-/* Evento à direita */
-.timeline-event.right {
-  left: 49%;
-  text-align: left;
-}
-
-.timeline-event.right .timeline-label {
-  margin-left: 80px; /* distância da linha */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  max-width: 250px;
+  width: 100%;
+  transition: transform 0.3s ease;
 }
 
 .timeline-label h2 {
-  font-size: 1.2rem;
-  color: #a04650;
-  margin-bottom: 4px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    color: #623b2a;
+    margin-bottom: 5px;
 }
 
 .timeline-label span {
-  font-size: 0.9rem;
-  color: #7c5a51;
+    font-size: 0.9rem;
+    color: #a04650;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.timeline-label p {
+    font-size: 1rem;
+    color: #7c5a51;
+}
+
+/* Conector vertical (A LINHA QUE LIGA A CAIXA AO DOT) */
+.timeline-event::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: #a04650; 
+  z-index: 2;
+  left: 50%; /* Centraliza horizontalmente sobre o evento */
+  transform: translateX(-50%);
+}
+
+/* Eventos Acima da Linha (LEFT) */
+.timeline-event.left .timeline-label {
+  /* Posiciona o rótulo acima do ponto */
+  position: absolute;
+  bottom: 120px; 
+}
+
+.timeline-event.left::after {
+    /* Linha vertical que sobe do dot até o rótulo */
+    height: 90px;
+    bottom: 50%;
+    transform: translate(-50%, -10px); /* Ajusta a posição para ligar a bolinha à caixa */
+}
+
+/* Eventos Abaixo da Linha (RIGHT) */
+.timeline-event.right .timeline-label {
+  /* Posiciona o rótulo abaixo do ponto */
+  position: absolute;
+  top: 120px; 
+}
+
+.timeline-event.right::after {
+    /* Linha vertical que desce do dot até o rótulo */
+    height: 90px;
+    top: 50%;
+    transform: translate(-50%, 10px); /* Ajusta a posição para ligar a bolinha à caixa */
 }
 
 
+/* -----------------------------------------
+   RESPONSIVIDADE
+----------------------------------------- */
+@media (max-width: 900px) {
+  .sobre-container { flex-direction: column; text-align: center; }
+  .sobre-texto { text-align: center; }
+  .sobre-img { width: 80%; }
+}
 
+@media (max-width: 700px) {
+  .header-top { flex-direction: column; align-items: center; gap: 16px; }
+  .container1 { margin-left: 0; text-align: center; }
+  .img-ver2 { max-width: 280px; }
+  .container1 h1 { font-size: 1rem; margin-top: 12px; padding: 0 20px; }
 
+  .coleção-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #a04650 #fff5f8;
+  }
 
+  .coleção-container::-webkit-scrollbar { height: 6px; }
+  .coleção-container::-webkit-scrollbar-thumb { background: #a04650; border-radius: 10px; }
+  .coleção-container::-webkit-scrollbar-track { background: #fff5f8; }
+
+  .coleção-img { width: 250px; flex-shrink: 0; }
+  .modal-content { flex-direction: column; width: 90%; max-width: 400px; border-radius: 12px; }
+  .modal-left { padding: 15px; }
+  .modal-img { max-width: 100%; border-radius: 10px; }
+  .modal-right { padding: 20px; text-align: center; }
+  .fechar { top: 10px; right: 15px; }
+}
