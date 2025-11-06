@@ -265,3 +265,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === modalEvento) window.fecharModalEvento();
   });
 });
+
+
+const track = document.querySelector('.timeline-track');
+const prevBtn = document.querySelector('.timeline-arrow.prev');
+const nextBtn = document.querySelector('.timeline-arrow.next');
+
+let currentPage = 0;
+const eventsPerPage = 3;
+const eventWidth = 300 + 180; // largura do card + gap aproximado
+const totalEvents = document.querySelectorAll('.timeline-event').length;
+const totalPages = Math.ceil(totalEvents / eventsPerPage);
+
+function updateTimeline() {
+  track.style.transform = `translateX(-${currentPage * eventsPerPage * eventWidth}px)`;
+}
+
+// Botões
+nextBtn.addEventListener('click', () => {
+  currentPage = (currentPage + 1) % totalPages;
+  updateTimeline();
+});
+
+prevBtn.addEventListener('click', () => {
+  currentPage = (currentPage - 1 + totalPages) % totalPages;
+  updateTimeline();
+});
+
+// Animação automática a cada 5s
+setInterval(() => {
+  currentPage = (currentPage + 1) % totalPages;
+  updateTimeline();
+}, 5000);

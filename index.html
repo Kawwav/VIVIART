@@ -86,6 +86,7 @@
       </div>
     </section>
 
+    <!-- SEÇÃO COLEÇÃO -->
     <section class="coleção" id="colecao">
       <h1 class="coleção-titulo">Coleção</h1>
       <div class="coleção-container">
@@ -108,80 +109,49 @@
       </div>
     </section>
 
-    <!doctype html>
-    <html lang="pt-BR">
-
-
-        <!-- Linha do tempo -->
-        <section class="timeline-container" id="eventos">
-
-
-          <div class="timeline-event left" onclick="abrirEvento(0)">
-            <div class="timeline-dot"></div> <div class="timeline-label">
-              <h2>Feira de Artesanato</h2>
-              <span>01/03/2025 - 03/03/2025</span>
-              <p>Evento incrível mostrando as novas bolsas e acessórios.</p>
-            </div>
-          </div>
-
-          <div class="timeline-event right" onclick="abrirEvento(1)">
-            <div class="timeline-dot"></div> <div class="timeline-label">
-              <h2>Workshop de Crochê</h2>
-              <span>15/04/2025 - 15/04/2025</span>
-              <p>Oficina prática de crochê com demonstração de técnicas especiais.</p>
-            </div>
-          </div>
-
-          <div class="timeline-event left" onclick="abrirEvento(2)">
-            <div class="timeline-dot"></div> <div class="timeline-label">
-              <h2>Exposição de Primavera</h2>
-              <span>10/05/2025 - 20/05/2025</span>
-              <p>Mostra de bolsas inspiradas nas cores da estação primavera.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Modal do catálogo -->
-        <div id="modal" class="modal">
-          <div class="modal-content">
-            <span class="fechar" onclick="fecharModal('modal')">&times;</span>
-            <div class="modal-left">
-              <span class="prev" onclick="mudarImagemModal(-1)">&laquo;</span>
-              <img class="modal-img" id="imgAmpliada" src="" alt="Imagem ampliada">
-              <span class="next" onclick="mudarImagemModal(1)">&raquo;</span>
-            </div>
-            <div class="modal-right">
-              <h2 id="modalTitulo"></h2>
-              <p id="modalDescricao"></p>
-              <h3 id="modalPreco"></h3>
-            </div>
-          </div>
+    <!-- LINHA DO TEMPO -->
+    <section class="timeline-container" id="eventos">
+      <div class="timeline-event left" onclick="abrirEvento(0)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">
+          <h2>Feira de Artesanato</h2>
+          <span>01/03/2025 - 03/03/2025</span>
+          <p>Evento incrível mostrando as novas bolsas e acessórios.</p>
         </div>
+      </div>
 
-        <!-- Modal da linha do tempo -->
-        <div id="modalEvento" class="modal">
-          <div class="modal-content">
-            <span class="fechar" onclick="fecharModal('modalEvento')">&times;</span>
-            <div class="modal-left">
-              <span class="prev" onclick="mudarImagemEvento(-1)">&#10094;</span>
-              <img id="eventoImg" src="" alt="Imagem do evento">
-              <span class="next" onclick="mudarImagemEvento(1)">&#10095;</span>
-            </div>
-            <div class="modal-right">
-              <h2 id="eventoTitulo"></h2>
-              <p id="eventoDescricao"></p>
-            </div>
-          </div>
+      <div class="timeline-event right" onclick="abrirEvento(1)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">
+          <h2>Workshop de Crochê</h2>
+          <span>15/04/2025 - 15/04/2025</span>
+          <p>Oficina prática de crochê com demonstração de técnicas especiais.</p>
         </div>
+      </div>
 
-      </main>
+      <div class="timeline-event left" onclick="abrirEvento(2)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">
+          <h2>Exposição de Primavera</h2>
+          <span>10/05/2025 - 20/05/2025</span>
+          <p>Mostra de bolsas inspiradas nas cores da estação primavera.</p>
+        </div>
+      </div>
 
-      <script src="script.js"></script>
-    </body>
+      <div class="timeline-event right" onclick="abrirEvento(2)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">
+          <h2>Exposição de Primavera</h2>
+          <span>10/05/2025 - 20/05/2025</span>
+          <p>Mostra de bolsas inspiradas nas cores da estação primavera.</p>
+        </div>
+      </div>
 
-    </html>
 
-    <!-- Modal do catálogo -->
+
+    </section>
+
+    <!-- MODAL DO CATÁLOGO -->
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="fechar" onclick="fecharModal('modal')">&times;</span>
@@ -198,7 +168,7 @@
       </div>
     </div>
 
-    <!-- Modal da linha do tempo -->
+    <!-- MODAL DA LINHA DO TEMPO -->
     <div id="modalEvento" class="modal">
       <div class="modal-content">
         <span class="fechar" onclick="fecharModal('modalEvento')">&times;</span>
@@ -213,10 +183,8 @@
         </div>
       </div>
     </div>
-
   </main>
 
   <script src="script.js"></script>
 </body>
-
 </html>
