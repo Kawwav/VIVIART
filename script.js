@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const modal = document.getElementById('modal');
   const imgAmpliadaEl = document.getElementById('imgAmpliada');
-  const modalTitulo = document.getElementById('modalTitulo');
-  const modalDescricao = document.getElementById('modalDescricao');
-  const modalPreco = document.getElementById('modalPreco');
+  const modalTitulo = document.getElementById('colecaoTitulo');
+const modalDescricao = document.getElementById('colecaoDescricao');
+const modalPreco = document.getElementById('colecaoPreco');
 
   const verColecaoBtn = document.querySelector('.btn.ver-colecao') || document.querySelector('.btn[href="#colecao"]');
   const colecaoSection = document.getElementById('colecao');
@@ -29,6 +29,58 @@ document.addEventListener('DOMContentLoaded', () => {
     searchHistory.className = 'hidden';
     searchContainer.appendChild(searchHistory);
   }
+
+  // -----------------------------
+  // Frases animadas
+  // -----------------------------
+  const frases = ["Feito à mão com amor 🧵", "Sustentável 🌿", "Peças únicas 💼"];
+  let i = 0;
+  setInterval(() => {
+    document.getElementById("slogan").textContent = frases[i];
+    i = (i + 1) % frases.length;
+  }, 2500);
+
+  // -----------------------------
+  // Lista de novidades (popup)
+  // -----------------------------
+  const novidades = [
+    {
+      img: "./img/bolsa1.PNG",
+      titulo: "Bolsa artesanal nova",
+      descricao: "Modelo exclusivo feito à mão com fio 100% algodão.",
+      preco: "R$ 180,00",
+    },
+    {
+      img: "./img/bolsa2.PNG",
+      titulo: "Bolsa boho azul",
+      descricao: "Inspirada no estilo boho, perfeita para o verão.",
+      preco: "R$ 220,00",
+    },
+    {
+      img: "./img/bolsa3.PNG",
+      titulo: "Bolsa de crochê marrom",
+      descricao: "Feita com fios naturais e detalhes em bambu.",
+      preco: "R$ 250,00",
+    },
+  ];
+
+  window.abrirModalNovidade = function (index) {
+    const item = novidades[index];
+    document.getElementById("modalImg").src = item.img;
+    document.getElementById("modalTitulo").textContent = item.titulo;
+    document.getElementById("modalDescricao").textContent = item.descricao;
+    document.getElementById("modalPreco").textContent = item.preco;
+    document.getElementById("modalNovidade").style.display = "flex";
+  };
+
+  window.fecharModalNovidade = function () {
+    document.getElementById("modalNovidade").style.display = "none";
+  };
+
+  window.addEventListener("click", (e) => {
+    const modal = document.getElementById("modalNovidade");
+    if (e.target === modal) modal.style.display = "none";
+  });
 
   // -----------------------------
   // Histórico de pesquisa
@@ -146,19 +198,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const alt = elemento?.alt || '';
     switch (alt) {
       case "bolsa1":
-        imagensModal = ["./img/bolsa1.PNG", "./img/bolsa12.PNG", "./img/bolsa13.PNG"];
+        imagensModal = ["./img/bolsa1.PNG", "./img/bolsa1.PNG", "./img/bolsa1.PNG"];
         modalTitulo.textContent = "Bolsa e porta celular";
         modalDescricao.textContent = "Bolsa feita à mão e porta celular com cores diferentes e design artesanal.";
         modalPreco.textContent = "R$250,00";
         break;
       case "bolsa2":
-        imagensModal = ["./img/bolsa2.PNG", "./img/bolsa22.PNG"];
+        imagensModal = ["./img/bolsa2.PNG", "./img/bolsa2.PNG"];
         modalTitulo.textContent = "Bolsa artesanal azul";
         modalDescricao.textContent = "Bolsa azul feita com fio de algodão, combinando perfeitamente com roupas leves e acessórios.";
         modalPreco.textContent = "R$280,00";
         break;
       case "bolsa3":
-        imagensModal = ["./img/bolsa3.PNG", "./img/bolsa32.PNG", "./img/bolsa33.PNG"];
+        imagensModal = ["./img/bolsa3.PNG", "./img/bolsa3.PNG", "./img/bolsa3.PNG"];
         modalTitulo.textContent = "Bolsa artesanal marrom";
         modalDescricao.textContent = "Feita para momentos de lazer e dias ensolarados, perfeita para praia ou passeios.";
         modalPreco.textContent = "R$300,00";
@@ -185,10 +237,12 @@ document.addEventListener('DOMContentLoaded', () => {
     imgAmpliadaEl.src = imagensModal[modalIndex];
   };
 
-  window.fecharModal = function() {
-    modal.classList.remove('fade-in');
-    setTimeout(() => modal.style.display = "none", 200);
-  };
+ window.fecharModal = function(id) {
+  const modalEl = id ? document.getElementById(id) : modal;
+  modalEl.classList.remove('fade-in');
+  setTimeout(() => modalEl.style.display = "none", 200);
+};
+
 
   window.addEventListener('click', e => {
     if (e.target === modal) window.fecharModal();
@@ -264,36 +318,47 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener("click", e => {
     if (e.target === modalEvento) window.fecharModalEvento();
   });
-});
 
+  // -----------------------------
+  // === Timeline Deslizante ===
+  // -----------------------------
+  const timelineContainer = document.querySelector(".timeline-container");
+  const timelineEvents = document.querySelectorAll(".timeline-event");
+  const arrowLeft = document.getElementById("arrowLeft");
+  const arrowRight = document.getElementById("arrowRight");
 
-const track = document.querySelector('.timeline-track');
-const prevBtn = document.querySelector('.timeline-arrow.prev');
-const nextBtn = document.querySelector('.timeline-arrow.next');
+  let currentTimelineIndex = 0;
+  const itemsPerView = 3; // quantos aparecem por vez
 
-let currentPage = 0;
-const eventsPerPage = 3;
-const eventWidth = 300 + 180; // largura do card + gap aproximado
-const totalEvents = document.querySelectorAll('.timeline-event').length;
-const totalPages = Math.ceil(totalEvents / eventsPerPage);
+  function updateTimeline() {
+    if (!timelineContainer || timelineEvents.length === 0) return;
 
-function updateTimeline() {
-  track.style.transform = `translateX(-${currentPage * eventsPerPage * eventWidth}px)`;
-}
+    const eventWidth = timelineEvents[0].offsetWidth + 80;
+    const maxIndex = Math.max(0, timelineEvents.length - itemsPerView);
 
-// Botões
-nextBtn.addEventListener('click', () => {
-  currentPage = (currentPage + 1) % totalPages;
+    const shift = -(currentTimelineIndex * eventWidth);
+    timelineContainer.style.transform = `translateX(${shift}px)`;
+    timelineContainer.style.transition = "transform 0.5s ease";
+
+    arrowLeft.classList.toggle("disabled", currentTimelineIndex === 0);
+    arrowRight.classList.toggle("disabled", currentTimelineIndex >= maxIndex);
+  }
+
+  arrowRight.addEventListener("click", () => {
+    const maxIndex = Math.max(0, timelineEvents.length - itemsPerView);
+    if (currentTimelineIndex < maxIndex) {
+      currentTimelineIndex++;
+      updateTimeline();
+    }
+  });
+
+  arrowLeft.addEventListener("click", () => {
+    if (currentTimelineIndex > 0) {
+      currentTimelineIndex--;
+      updateTimeline();
+    }
+  });
+
+  window.addEventListener("resize", updateTimeline);
   updateTimeline();
 });
-
-prevBtn.addEventListener('click', () => {
-  currentPage = (currentPage - 1 + totalPages) % totalPages;
-  updateTimeline();
-});
-
-// Animação automática a cada 5s
-setInterval(() => {
-  currentPage = (currentPage + 1) % totalPages;
-  updateTimeline();
-}, 5000);
