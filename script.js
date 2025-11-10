@@ -380,4 +380,5 @@ window.addEventListener('scroll', () => {
   } else {
     whatsappButton.classList.remove('whatsapp-hide');
   }
+
 });
