@@ -156,7 +156,7 @@ header {
   flex: 0 0 33.33%; /* Largura fixa do item */
   text-align: center;
   transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 0.5;     /* Item inativo meio transparente */
+
   transform: scale(0.8);
 }
 
@@ -192,7 +192,48 @@ header {
 .carousel-btn.next {
   right: 10px;
 }
+.carousel-dots {
+  text-align: center;
+  margin-top: 20px;
+  position: absolute; /* Para centralizar sob o carrossel */
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; /* Para alinhar as bolinhas */
+  gap: 8px; /* Espaço entre as bolinhas */
+}
 
+/* Estilo para cada bolinha */
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px; /* Ajuste o espaçamento conforme preferir */
+  background-color: #d1b8ab; /* Cor padrão, mais clara/secundária */
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border: none;
+  padding: 0;
+}
+
+
+/* Estilo para a bolinha ativa (item atual) */
+.dot.active {
+  background-color: #b47149; /* Cor de destaque, mais escura/primária */
+  transform: scale(1.1); /* Um leve destaque visual */
+}
+
+.dot:hover:not(.active) {
+  background-color: #b47149; /* Destaque ao passar o mouse */
+  opacity: 0.8;
+}
+
+/* Manter o hero-carousel como position: relative para que as bolinhas (position: absolute) funcionem corretamente */
+.hero-carousel {
+    position: relative; 
+    /* ... outros estilos ... */
+}
 
 /* -----------------------------------------
    SEÇÃO NOVIDADES

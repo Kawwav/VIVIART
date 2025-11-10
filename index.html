@@ -9,11 +9,13 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
     rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
-  <a href="https://w.app/neo93l" target="_blank" class="whatsapp-float">
-    <img src="img/social.png" alt="">
-  </a>
+<a href="https://w.app/neo93l" target="_blank" class="whatsapp-float">
+  <img src="img/social.png" alt="">
+</a>
 
 <body>
   <header>
@@ -44,17 +46,16 @@
       <div class="hero-text">
         <h2>Bolsas artesanais feitas à mão</h2>
         <p>Peças únicas inspiradas na natureza e no estilo boho.
-          Encomendas abertas — envio para todo o Brasil.</p>
+          Encomendas abertas, envio para todo o Brasil.</p>
         <a href="#colecao" class="btn ver-colecao">Ver coleção</a>
       </div>
 
       <section class="hero-carousel">
         <h2 class="novidades-titulo">Novidades ✨</h2>
         <p class="novidades-subtitulo">
-          Confira as peças mais recentes da Viviart — feitas com amor e dedicação 
+          Confira as peças mais recentes da Viviart, feitas com amor e dedicação
         </p>
 
-        <button class="carousel-btn prev">❮</button>
         <div class="carousel-track">
           <div class="carousel-item" onclick="abrirModalNovidade(0)">
             <img src="./img/bolsa1.PNG" alt="Bolsa artesanal nova" />
@@ -68,8 +69,13 @@
             <img src="./img/bolsa3.PNG" alt="Bolsa de crochê marrom" />
             <h1 class="descrição">Bolsa de crochê marrom</h1>
           </div>
+          
         </div>
-        <button class="carousel-btn next">❯</button>
+        <div class="carousel-dots">
+          <button class="dot active" data-index="0"></button>
+          <button class="dot" data-index="1"></button>
+          <button class="dot" data-index="2"></button>
+        </div>
       </section>
 
       <!-- MODAL DE NOVIDADES -->
@@ -110,7 +116,7 @@
     </section>
 
     <!-- SEÇÃO COLEÇÃO -->
-   <section class="coleção" id="colecao">
+    <section class="coleção" id="colecao">
       <h1 class="coleção-titulo">Coleção</h1>
       <div class="coleção-container">
         <div class="item">
@@ -209,21 +215,21 @@
 
 
     <!-- MODAL DO COLEÇÃO -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="fechar" onclick="fecharModal('modal')">&times;</span>
-    <div class="modal-left">
-      <span class="prev" onclick="mudarImagemModal(-1)">&laquo;</span>
-      <img class="modal-img" id="imgAmpliada" src="" alt="Imagem ampliada">
-      <span class="next" onclick="mudarImagemModal(1)">&raquo;</span>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="fechar" onclick="fecharModal('modal')">&times;</span>
+        <div class="modal-left">
+          <span class="prev" onclick="mudarImagemModal(-1)">&laquo;</span>
+          <img class="modal-img" id="imgAmpliada" src="" alt="Imagem ampliada">
+          <span class="next" onclick="mudarImagemModal(1)">&raquo;</span>
+        </div>
+        <div class="modal-right">
+          <h2 id="colecaoTitulo"></h2>
+          <p id="colecaoDescricao"></p>
+          <h3 id="colecaoPreco"></h3>
+        </div>
+      </div>
     </div>
-    <div class="modal-right">
-      <h2 id="colecaoTitulo"></h2>
-      <p id="colecaoDescricao"></p>
-      <h3 id="colecaoPreco"></h3>
-    </div>
-  </div>
-</div>
 
     <!-- MODAL DA LINHA DO TEMPO -->
     <div id="modalEvento" class="modal">
@@ -243,44 +249,45 @@
   </main>
 
   <footer class="footer">
-  <div class="footer-container">
-    <!-- LOGO -->
-    <div class="footer-logo">
-      <img src="./img/logo redondo 2.png" alt="Viviart Logo">
-      <p>Artesanato feito com amor ❤</p>
-    </div>
+    <div class="footer-container">
+      <!-- LOGO -->
+      <div class="footer-logo">
+        <img src="./img/logo redondo 2.png" alt="Viviart Logo">
+        <p>Artesanato feito com amor ❤</p>
+      </div>
 
-    <!-- LINKS -->
-    <div class="footer-links">
-      <h3>Navegação</h3>
-      <ul>
-        <li><a href="#colecao">Coleção</a></li>
-        <li><a href="#eventos">Eventos</a></li>
-      </ul>
-    </div>
+      <!-- LINKS -->
+      <div class="footer-links">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#colecao">Coleção</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+        </ul>
+      </div>
 
-    <!-- REDES SOCIAIS -->
-    <div class="footer-social">
-      <h3>Contato</h3>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/viviart.croche/" target="_blank"><img src="./img/instagram.png" alt="Instagram"></a>
-        <a href="https://w.app/neo93l" target="_blank"><img src="./img/whatsapp.png" alt="WhatsApp"></a>
+      <!-- REDES SOCIAIS -->
+      <div class="footer-social">
+        <h3>Contato</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/viviart.croche/" target="_blank"><img src="./img/instagram.png"
+              alt="Instagram"></a>
+          <a href="https://w.app/neo93l" target="_blank"><img src="./img/whatsapp.png" alt="WhatsApp"></a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- COPYRIGHT -->
-  <div class="footer-bottom">
-    <p>© 2025 Viviart Crochê. Todos os direitos reservados.</p>
-  </div>
-</footer>
-
-
-
-
-
-
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+      <p>© 2025 Viviart Crochê. Todos os direitos reservados.</p>
     </div>
+  </footer>
+
+
+
+
+
+
+  </div>
   </footer>
 
 
