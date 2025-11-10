@@ -362,3 +362,23 @@ const modalPreco = document.getElementById('colecaoPreco');
   window.addEventListener("resize", updateTimeline);
   updateTimeline();
 });
+
+
+// Detecta o botão e o footer
+const whatsappButton = document.querySelector('.whatsapp-float');
+const footer = document.querySelector('footer');
+
+window.addEventListener('scroll', () => {
+  const footerRect = footer.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // Quando o topo do footer entra na viewport, esconde o botão
+  if (footerRect.top < windowHeight) {
+    if (!whatsappButton.classList.contains('whatsapp-hide')) {
+      whatsappButton.classList.add('whatsapp-hide');
+    }
+  } else {
+    whatsappButton.classList.remove('whatsapp-hide');
+  }
+
+});
